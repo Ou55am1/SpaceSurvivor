@@ -139,5 +139,5 @@ Voici la correspondance entre les **TPs du cours** et les fonctionnalités de **
 *   **Polymorphisme** : Chaque entité redéfinit sa méthode `update()` tout en utilisant le moteur physique parent.
 
 ---
-**Développé par [Ton Nom/Groupe] pour le module IA2.**
+**Développé par BENATIK Oussama pour le module IA2.**
 
