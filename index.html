@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Survivor AI</title>
+    <meta name="description"
+        content="Survive the infinite void, command your drone fleet, and dominate the leaderboard in this action-packed sci-fi shooter built with p5.js.">
+    <link rel="icon" type="image/png" href="Orb.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #050510;
+            overflow: hidden;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #audioBtn {
+            position: absolute;
+            top: auto;
+            left: auto;
+            bottom: 20px;
+            right: 20px;
+            transform: none;
+            padding: 20px 40px;
+            font-size: 24px;
+            background: #00ffcc;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 0 20px #00ffcc;
+            font-weight: bold;
+            display: block;
+            /* Visible by default */
+        }
+    </style>
+
+    <!-- P5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+
+    <!-- Project Scripts -->
+    <script src="SoundManager.js?v=10"></script>
+    <script src="AssetManager.js?v=10"></script>
+    <script src="Vehicle.js?v=10"></script>
+    <script src="Obstacle.js?v=10"></script>
+    <script src="Enemy.js?v=10"></script>
+    <script src="Player.js?v=10"></script>
+    <script src="Orb.js?v=10"></script>
+    <script src="Projectile.js?v=10"></script>
+    <script src="Weapon.js?v=10"></script>
+    <script src="Particle.js?v=10"></script>
+    <script src="Helper.js?v=10"></script>
+    <script src="Boss.js?v=10"></script>
+    <script src="UpgradeManager.js?v=10"></script>
+    <script src="sketch.js?v=10"></script>
+</head>
+
+<body>
+    <button id="audioBtn">CLICK TO START AUDIO</button>
+
+    <script>
+        document.getElementById('audioBtn').addEventListener('click', function () {
+            let btn = this;
+            if (typeof userStartAudio === 'function') {
+                userStartAudio().then(() => {
+                    btn.innerText = "AUDIO ENABLED";
+                    btn.style.background = "#00ff00";
+                    setTimeout(() => {
+                        btn.style.display = 'none';
+                    }, 500);
+
+                    // Also try to helper logic
+                    if (window.soundManager) {
+                        window.soundManager.resumeAudio();
+                    }
+                }).catch(e => {
+                    btn.innerText = "ERROR: " + e;
+                    btn.style.background = "red";
+                });
+            } else {
+                btn.innerText = "LOADING...";
+            }
+        });
+    </script>
+</body>
+
+</html>
