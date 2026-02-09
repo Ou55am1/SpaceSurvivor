@@ -6,6 +6,12 @@
 
 ---
 
+## 🔗 Quick Links
+-   📺 **YouTube Demo**: [Watch Gameplay Video](https://youtu.be/u9lt_L5ncHM)
+-   🎮 **Play on Itch.io**: [Space Survivor Web Build](https://ou55ama.itch.io/space-survivor)
+
+---
+
 ## 🎮 Features
 
 ### 1. **Dynamic Combat System**
